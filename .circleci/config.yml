@@ -19,7 +19,7 @@ jobs:
         name: Dependency Installation
         command: npm install
       - persist_to_workspace:
-        root: ~/`
+        root: ~/
         paths:
           - project/*
         
