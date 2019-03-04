@@ -16,19 +16,19 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Dependency Installation
-        command: npm install
+          name: Dependency Installation
+          command: npm install
       - persist_to_workspace:
-        root: ~/
-        paths:
-          - project/*
+          root: ~/
+          paths:
+            - project/*
         
   tests: 
     executor: node-executor
     steps:
       - run:
-        name: Tests
-        command: npm test
+          name: Tests
+          command: npm test
 
   # # tests:
   # #   steps:
@@ -76,6 +76,6 @@ workflows:
   build_and_test:
     jobs:
       - setup
-      - test:
+      - tests:
           requires:
             - setup
