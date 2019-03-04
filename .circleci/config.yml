@@ -77,5 +77,5 @@ workflows:
     jobs:
       - setup
       - test:
-        requires:
-          - setup
+          requires:
+            - setup
