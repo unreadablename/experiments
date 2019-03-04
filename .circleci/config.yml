@@ -32,9 +32,9 @@ jobs:
           name: Tests
           command: npm run test:ci
       - store_artifacts:
-          path: ~/project
+          path: reports/junit/js-test-results.xml
       - store_test_results:
-          path: reports
+          path: reports/junit/js-test-results.xml
 
 
   # # tests:
