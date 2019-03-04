@@ -13,6 +13,7 @@
     "prestart:prod": "rimraf dist && npm run build",
     "start:prod": "node dist/main.js",
     "lint": "tslint -p tsconfig.json -c tslint.json",
+    "lint:ci": "mkdir -p reports/tslint && tslint -p tsconfig.json -c tslint.json -t junit --out reports/tslint/results.xml",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
@@ -62,5 +63,9 @@
       "default",
       "jest-junit"
     ]
+  },
+  "jest-unit": {
+    "outputDirectory": "./reports/jest",
+    "outputName": "./results.xml"
   }
 }

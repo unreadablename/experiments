@@ -29,13 +29,16 @@ jobs:
       - attach_workspace:
           at: ~/
       - run:
+          name: Lint
+          command: npm run lint:ci
+      - run:
           name: Tests
           command: npm run test:ci
           environment:
             JEST_JUNIT_OUTPUT: "reports/jest/results.xml"
       - store_artifacts:
           path: reports
-          destination: reports1
+          destination: reports
       - store_test_results:
           path: reports
   build:
