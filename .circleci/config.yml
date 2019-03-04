@@ -31,6 +31,9 @@ jobs:
       - run:
           name: Tests
           command: npm run test:ci
+      - run:
+          name: wtf
+          command: ls -la
       - store_artifacts:
           path: reports/junit/js-test-results.xml
       - store_test_results:
