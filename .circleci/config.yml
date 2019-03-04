@@ -33,13 +33,22 @@ jobs:
           command: npm run test:ci
           environment:
             JEST_JUNIT_OUTPUT: "reports/jest/results.xml"
-      - run:
-          name: wtf
-          command: ls -la
       - store_artifacts:
           path: reports
+          prefix: reports
       - store_test_results:
           path: reports
+  build:
+    executor: node-executor
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: Build
+          command: npm run build
+      - store_artifacts:
+          path: dist
+          prefix: dist
 
 
   # # tests:
@@ -91,3 +100,6 @@ workflows:
       - tests:
           requires:
             - setup
+      - build:
+          requires:
+            - tests
