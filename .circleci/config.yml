@@ -30,7 +30,7 @@ jobs:
           at: ~/
       - run:
           name: Tests
-          command: npm test:ci
+          command: npm run test:ci
       - store_test_results:
           path: reports
 
