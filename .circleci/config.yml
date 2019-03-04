@@ -35,9 +35,9 @@ jobs:
           name: wtf
           command: ls -la
       - store_artifacts:
-          path: junit.xml
+          path: reports
       - store_test_results:
-          path: junit.xml
+          path: reports
 
 
   # # tests:

@@ -62,5 +62,9 @@
       "default",
       "jest-junit"
     ]
+  },
+  "jest-unit": {
+    "outputDirectory": "./reports/jest",
+    "outputName": "./results.xml"
   }
 }
