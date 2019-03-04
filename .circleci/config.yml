@@ -26,9 +26,13 @@ jobs:
   tests: 
     executor: node-executor
     steps:
+      - attach_workspace:
+          at: ~/
       - run:
           name: Tests
-          command: npm test
+          command: npm test:ci
+      - store_test_results:
+          path: reports
 
   # # tests:
   # #   steps:
