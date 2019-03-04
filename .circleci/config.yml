@@ -35,7 +35,7 @@ jobs:
             JEST_JUNIT_OUTPUT: "reports/jest/results.xml"
       - store_artifacts:
           path: reports
-          prefix: reports
+          destination: reports1
       - store_test_results:
           path: reports
   build:
