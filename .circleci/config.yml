@@ -31,6 +31,8 @@ jobs:
       - run:
           name: Tests
           command: npm run test:ci
+          environment:
+            JEST_JUNIT_OUTPUT: "reports/jest/results.xml"
       - run:
           name: wtf
           command: ls -la
