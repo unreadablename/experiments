@@ -31,8 +31,11 @@ jobs:
       - run:
           name: Tests
           command: npm run test:ci
+      - store_artifacts:
+          path: ~/project
       - store_test_results:
           path: reports
+
 
   # # tests:
   # #   steps:
