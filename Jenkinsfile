@@ -6,6 +6,7 @@ pipeline {
   }
   environment {
     CI = 'true'
+    JEST_JUNIT_OUTPUT = './reports/jest/junit.xml'
   }
   stages {
     stage('Install') {
