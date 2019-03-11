@@ -18,6 +18,8 @@ pipeline {
       steps {
         sh script: 'yarn run test:ci', label: 'Unit Tests'
 
+        labelledShell label: 'Unit Tests', script: 'yarn run test:ci'
+
         sh '''
           echo "Unit Tests"
           yarn run test:ci
