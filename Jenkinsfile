@@ -16,7 +16,10 @@ pipeline {
     }
     stage('Tests') {
       steps {
-        sh 'yarn run test:ci'
+        sh {
+          script 'yarn run test:ci'
+          label 'Unit Tests'
+        }
       }
     }
   }
