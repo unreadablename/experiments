@@ -11,12 +11,17 @@ pipeline {
   stages {
     stage('Install') {
       steps {
-        sh 'yarn'
+        sh script: 'yarn', label: 'Install dependencies'
       }
     }
     stage('Tests') {
       steps {
         sh script: 'yarn run test:ci', label: 'Unit Tests'
+
+        sh '''
+          echo "Unit Tests"
+          yarn run test:ci
+        '''
       }
     }
   }
